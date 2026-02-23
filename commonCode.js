@@ -33,6 +33,7 @@ const blankHtml = `
 
 
 
+
 function allRender(){
     const cardL = document.querySelectorAll('#card')
     for (const c of cardL){
@@ -69,6 +70,7 @@ function countJobs(){
     rejectedNumber.innerText = rejectedList.length
 }
 countJobs()
+
 
 
 function get(id){
