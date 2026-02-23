@@ -39,8 +39,38 @@ function doToggle(id){
 
 
 container.addEventListener('click', function(event){
-    
+    if (event.target.id == 'delete-btn'){
+        const eve = event.target.parentNode.parentNode.querySelector('#job-name').innerText
+        
+        allList = allList.filter(i => i.jobName != eve)
+        interviewList = interviewList.filter(i => i.jobName != eve)
+        rejectedList = rejectedList.filter(i => i.jobName != eve)
 
+        interviewCard.innerHTML = ``
+        runList(interviewList)
+        rejectedCard.innerHTML = ``
+        runList(rejectedList)
+        cards.innerHTML = ``
+        runList(allList)
+
+        resetDashboard()
+
+        total.innerText = allList.length
+        interviewNumber.innerText = interviewList.length
+        rejectedNumber.innerText = rejectedList.length
+
+        if(interviewList.length == 0){
+            interviewCard.innerHTML = blankHtml
+        }
+        if(rejectedList.length == 0){
+            rejectedCard.innerHTML = blankHtml
+        }
+        if(allList.length == 0){
+            cards.innerHTML = blankHtml
+        }
+        return
+    }
+    
     const parent = event.target.parentNode.parentNode
     const eventText = event.target.innerText
     const eventClassList = event.target.classList
