@@ -73,6 +73,16 @@ container.addEventListener('click', function(event){
         return
     }
 
+    resetDashboard()
+
+    // add the status as Interview.
+    parent.querySelector('#job-status').innerHTML = `
+    <button class="${eventClassList}">${eventText}</button>
+    `
+
+    // Will increase the the count of interview in Dashboard
+    interviewNumber.innerText = interviewList.length
+    rejectedNumber.innerText = rejectedList.length
+
     
-})
 
