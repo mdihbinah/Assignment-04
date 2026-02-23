@@ -84,5 +84,26 @@ container.addEventListener('click', function(event){
     interviewNumber.innerText = interviewList.length
     rejectedNumber.innerText = rejectedList.length
 
+    // will add the data on Interview tab
+    if (interviewList.length > 0){
+        if (interviewCard.querySelector('interview-blank')){
+            document.getElementById('interview-blank').classList.add('hidden')
+        }
+        interviewCard.innerHTML = ``
+    } else{
+        interviewCard.innerHTML = blankHtml
+    }
+
+    if (rejectedList.length > 0){
+        if(interviewCard.querySelector('rejected-blank')){
+            document.getElementById('rejected-blank').classList.add('hidden')
+        }
+        rejectedCard.innerHTML = ``
+    } else{
+        rejectedCard.innerHTML = blankHtml
+    }
     
+    runList(interviewList)
+    runList(rejectedList)
+})
 
