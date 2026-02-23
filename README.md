@@ -55,7 +55,30 @@ Works step:
 2. Event is target element.
 3. Then it "bubbles up" to its parent, then the parent's parent, and so on, until it reaches the top of the DOM.
 
+Ans. 04:
 
+Definition:Event delegation  means add an event listener to a parent to handle events for its children.
+
+1. Works for dynamic elements like I add event litener on container id in Assignment.
+2. Improves performance
+3.It Reduces memory usage
+4. Clean code
+
+Ans. 05:
+
+event.preventDefault():
+Purpose: Prevents the default browser action for an event from happening.
+
+
+It stops the browser’s built-in behavior.
+It does not stop the event from bubbling or capturing.
+
+
+event.stopPropagation():
+Purpose: Stops the event from bubbling up (or capturing down) the DOM tree.
+
+It only stops the event from reaching other event listeners on ancestor elements.
+It preventing parent elements from reacting to a child’s event.
 
 
 
