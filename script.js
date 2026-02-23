@@ -38,7 +38,41 @@ function doToggle(id){
 }
 
 
-git remote add origin https://github.com/mdihbinah/Assignment-04.git
-git branch -M main
-git push -u origin main
+container.addEventListener('click', function(event){
+    
+
+    const parent = event.target.parentNode.parentNode
+    const eventText = event.target.innerText
+    const eventClassList = event.target.classList
+    
+    const jobName = findText(parent,'job-name')
+    const jobPosition = findText(parent,'job-position')
+    const jobKeywords = findText(parent,'job-keywords')
+    const jobStatus = findText(parent,'job-status')
+    const jobDescription = findText(parent,'job-description')
+    const style = eventClassList.value
+    const txt = eventText
+
+    const cardInfo = {
+        jobName,
+        jobPosition,
+        jobKeywords,
+        jobStatus,
+        jobDescription,
+        style,
+        txt,
+    }
+    
+    if(eventText == 'Interview' && (!(interviewList.find(i => i.jobName == jobName)))){
+        interviewList.push(cardInfo)
+        rejectedList = rejectedList.filter(i => i.jobName != jobName)
+    } else if(eventText == 'Rejected' && (!(rejectedList.find(i => i.jobName == jobName)))){
+        rejectedList.push(cardInfo)
+        interviewList = interviewList.filter(i => i.jobName != jobName)
+    } else{
+        return
+    }
+
+    
+})
 
