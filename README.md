@@ -1,33 +1,33 @@
 ## Ans. 01:
 
 ### document.getElementById(id):
-  Returns: A single element
-  Parameter: The exact id string (without #).
-  Return type: HTMLElement or if not found gives null.
+  - Returns: A single element
+  - Parameter: The exact id string (without #).
+  - Return type: HTMLElement or if not found gives null.
 
 It is faster.
 It is usually use to find unique element.
 
 
 ### document.getElementsByClassName(className):
-  Return: A live HTMLCollection of all elements with the given class.
-  Parameter: Class name string (without .).
-  Return type: HTMLCollection.
+  - Return: A live HTMLCollection of all elements with the given class.
+  - Parameter: Class name string (without .).
+  - Return type: HTMLCollection.
 
 It give live collection.
 
 
 
 ### document.querySelector(selector):
-  Returns: First element matching the CSS selector.
-  Parameter: Any CSS selector (#id, .class, tag etc.)
-  Return type: Element or null.
+  - Returns: First element matching the CSS selector.
+  - Parameter: Any CSS selector (#id, .class, tag etc.)
+  - Return type: Element or null.
 
 
 ### document.querySelectorAll(selector):
-  Returns: A NodeList of all elements matching the CSS selector.
-  Parameter: Any CSS selector.
-  Return type: NodeList.
+  - Returns: A NodeList of all elements matching the CSS selector.
+  - Parameter: Any CSS selector.
+  - Return type: NodeList.
 
 
 
