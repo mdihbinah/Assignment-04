@@ -45,6 +45,7 @@ function allRender(){
         const interviewBtn = c.querySelector('#btn-interview').innerText 
         const rejectedBtn = c.querySelector('#btn-rejected').innerText 
         const style = 'btn'
+        const txt = 'Not Applied'
         
         const cardInfo = {
             jobName,
@@ -55,12 +56,13 @@ function allRender(){
             interviewBtn,
             rejectedBtn,
             style,
+            txt,
             
         }
         allList.push(cardInfo)
-        cards.innerHTML = ``
-        runList(allList)
     }
+    cards.innerHTML = ``
+    runList(allList)
 }
 allRender()
 
@@ -94,9 +96,9 @@ function resetDashboard(){
 function runList(list){
     
     for (const ele of list){
-        if(!ele.txt){
-            ele.txt = 'Not Applied'
-        }
+        // if(!ele.txt){
+        //     ele.txt = 'Not Applied'
+        // }
         let newCard = document.createElement('div')
         newCard.innerHTML = `
             <div id="card" class=" bg-[#f1f2f4] p-5 rounded-xl space-y-3">

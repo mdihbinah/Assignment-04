@@ -80,6 +80,8 @@ container.addEventListener('click', function(event){
     const jobKeywords = findText(parent,'job-keywords')
     const jobStatus = findText(parent,'job-status')
     const jobDescription = findText(parent,'job-description')
+    const interviewBtn = findText(parent, 'btn-interview')
+    const rejectedBtn = findText(parent, 'btn-rejected')
     const style = eventClassList.value
     const txt = eventText
 
@@ -93,6 +95,11 @@ container.addEventListener('click', function(event){
         txt,
     }
     
+    for(let i in allList){
+        if (allList[i].jobName == jobName){
+            allList[i] = cardInfo
+        }
+    }
     if(eventText == 'Interview' && (!(interviewList.find(i => i.jobName == jobName)))){
         interviewList.push(cardInfo)
         rejectedList = rejectedList.filter(i => i.jobName != jobName)
@@ -100,6 +107,7 @@ container.addEventListener('click', function(event){
         rejectedList.push(cardInfo)
         interviewList = interviewList.filter(i => i.jobName != jobName)
     } else{
+        
         return
     }
 
@@ -116,7 +124,7 @@ container.addEventListener('click', function(event){
 
     // will add the data on Interview tab
     if (interviewList.length > 0){
-        if (interviewCard.querySelector('interview-blank')){
+        if (interviewCard.querySelector('#interview-blank')){
             document.getElementById('interview-blank').classList.add('hidden')
         }
         interviewCard.innerHTML = ``
@@ -125,7 +133,7 @@ container.addEventListener('click', function(event){
     }
 
     if (rejectedList.length > 0){
-        if(interviewCard.querySelector('rejected-blank')){
+        if(interviewCard.querySelector('#rejected-blank')){
             document.getElementById('rejected-blank').classList.add('hidden')
         }
         rejectedCard.innerHTML = ``
